@@ -3,19 +3,18 @@
 
 #include <stdio.h>
 
-long int factorial(long int num);
+long double factorial(long double num);
 
 int main(){
-    int num;
+    long double num;
     printf("\nenter a number: ");
-    scanf("%d",&num);
-    printf("\n%d factorial is %ld\n\n",num,factorial(num));
+    scanf("%Lf",&num);
+    printf("\n%.Lf factorial is %.Lf\n\n",num,factorial(num));
     return 0;
 }
 
-long int factorial(long int num){
-    long int fact = 1;
-    int i;
+long double factorial(long double num){
+    long double fact = 1, i;
     for(i = 1 ; i <= num ; i++) fact*=i;
     return fact;
 }

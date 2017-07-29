@@ -7,9 +7,10 @@
 #include <stdlib.h>
 
 int main(){
-    int n,i;
+    long double n;
+    long int i;
     printf("\nenter how many numbers you wanna list: ");
-    scanf("%d",&n);
+    scanf("%Lf",&n);
     if (n<=0){
         printf("\nenter a positive number\n\n");
         exit(1);
@@ -18,12 +19,12 @@ int main(){
         printf("\nsequence: 0\n\n");
         exit(1);
     }
-    if (n>93){
-        printf("\ntoo high to list. max 93\n\n");
-        exit(1);
-    }
+    //if (n>93){
+      //  printf("\ntoo high to list. max 93\n\n");
+        //exit(1);
+    //}
     if (n > 2){
-        long int *p = malloc(n*sizeof(int));
+        long double *p = malloc(n*sizeof(long double));
         if(p == NULL){
             printf("\nERROR - insuficient memory!\n");
             exit(1);
@@ -32,7 +33,7 @@ int main(){
         p[1] = 1;
         for(i = 2 ; i < n ; i++) p[i] = p[i-1] + p[i-2];
         printf("\n\n");
-        for(i = 0 ; i < n ; i++) printf("%ld\n",p[i]);
+        for(i = 0 ; i < n ; i++) printf("%.LF\n",p[i]);
         printf("\n\n");
         
     }
